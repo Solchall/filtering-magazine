@@ -1,14 +1,11 @@
 
 import os
-from langchain.agents import load_tools
-from langchain.agents import initialize_agent
-from langchain.agents import AgentType
 from langchain.llms import OpenAI
 from langchain.prompts import PromptTemplate
 from langchain.chains import ConversationChain
 from langchain.memory import ConversationKGMemory
 
-os.environ["OPENAI_API_KEY"] = "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"
+os.environ["OPENAI_API_KEY"]
 
 def Filtering(user_input):
     llm = OpenAI(temperature=0.9)
@@ -123,53 +120,53 @@ def Filtering(user_input):
 
 
     Example 1)
-    user input: 키치 찾아줘
-    URL: https://www.musinsa.com/search/musinsa/magazine?q=키치
+    user input:키치 찾아줘
+    URL:https://www.musinsa.com/search/musinsa/magazine?q=키치
 
     Example 2)
-    user input: 연예인이 착용한 가방 보여줘
-    URL: https://www.musinsa.com/search/musinsa/magazine?q=연예인착용&category1DepthCode=054&selectedFilters=여성가방%3Acategory1DepthCode&category1DepthName=여성+가방&openFilterLayout=N
+    user input:연예인이 착용한 가방 보여줘
+    URL:https://www.musinsa.com/search/musinsa/magazine?q=연예인착용&category1DepthCode=054&selectedFilters=여성가방%3Acategory1DepthCode&category1DepthName=여성+가방&openFilterLayout=N
 
     Example 3)
-    user input: 레트로한 신발 찾아줘
-    URL: https://www.musinsa.com/search/musinsa/magazine?q=레트로&category1DepthCode=005&selectedFilters=신발%3Acategory1DepthCode&category1DepthName=신발&openFilterLayout=N
+    user input:레트로한 신발 찾아줘
+    URL:https://www.musinsa.com/search/musinsa/magazine?q=레트로&category1DepthCode=005&selectedFilters=신발%3Acategory1DepthCode&category1DepthName=신발&openFilterLayout=N
 
     Example 4)
-    user input: 요즘 트렌디한 상의 찾아줘
-    URL: https://www.musinsa.com/search/musinsa/magazine?q=트렌디&category1DepthCode=001&selectedFilters=상의%3A001%3Acategory1DepthCode&category1DepthName=상의&openFilterLayout=N
+    user input:요즘 트렌디한 상의 찾아줘
+    URL:https://www.musinsa.com/search/musinsa/magazine?q=트렌디&category1DepthCode=001&selectedFilters=상의%3A001%3Acategory1DepthCode&category1DepthName=상의&openFilterLayout=N
 
     Example 5)
-    user input: 힙한 옷 최신댓글순으로 보여줘
-    URL: https://www.musinsa.com/search/musinsa/magazine?q=힙한&sortCode=comment_date
+    user input:힙한 옷 최신댓글순으로 보여줘
+    URL:https://www.musinsa.com/search/musinsa/magazine?q=힙한&sortCode=comment_date
 
     Example 6)
-    user input: 유행하는 긴소매 보여줘
-    URL: https://www.musinsa.com/search/musinsa/magazine?q=유행하는&category1DepthCode=001&category2DepthCodes=001010&selectedFilters=상의%3A001%3Acategory1DepthCode%7C긴소매%3A001010%3Acategory2DepthCodes&category1DepthName=상의&openFilterLayout=N
+    user input:유행하는 긴소매 보여줘
+    URL:https://www.musinsa.com/search/musinsa/magazine?q=유행하는&category1DepthCode=001&category2DepthCodes=001010&selectedFilters=상의%3A001%3Acategory1DepthCode%7C긴소매%3A001010%3Acategory2DepthCodes&category1DepthName=상의&openFilterLayout=N
 
     Example 7)
-    user input: 여름에 입을만한 반소매티셔츠나 블라우스 보여줘
-    URL: https://www.musinsa.com/search/musinsa/magazine?q=여름에+입을만한&category1DepthCode=001&category2DepthCodes=001001%2C001002&selectedFilters=상의%3A001%3Acategory1DepthCode%7C반소매+티셔츠%3A001001%3Acategory2DepthCodes%7C셔츠%2F블라우스%3A001002%3Acategory2DepthCodes&category1DepthName=상의&openFilterLayout=N
+    user input:여름에 입을만한 반소매티셔츠나 블라우스 보여줘
+    URL:https://www.musinsa.com/search/musinsa/magazine?q=여름에+입을만한&category1DepthCode=001&category2DepthCodes=001001%2C001002&selectedFilters=상의%3A001%3Acategory1DepthCode%7C반소매+티셔츠%3A001001%3Acategory2DepthCodes%7C셔츠%2F블라우스%3A001002%3Acategory2DepthCodes&category1DepthName=상의&openFilterLayout=N
 
 
     Example 8)
-    user input: y2k 패션 추천해줘
-    URL: https://www.musinsa.com/search/musinsa/magazine?q=키치
+    user input:y2k 패션 추천해줘
+    URL:https://www.musinsa.com/search/musinsa/magazine?q=키치
 
     Example 9)
-    user input: 요즘 트렌디한 옷이 뭐야?
-    URL: https://www.musinsa.com/search/musinsa/magazine?q=트렌디
+    user input:요즘 트렌디한 옷이 뭐야?
+    URL:https://www.musinsa.com/search/musinsa/magazine?q=트렌디
 
     Example 10)
-    user input: 뉴진스가 입을 것 같은 옷 알려줘
-    URL: https://www.musinsa.com/search/musinsa/magazine?q=뉴진스
+    user input:뉴진스가 입을 것 같은 옷 알려줘
+    URL:https://www.musinsa.com/search/musinsa/magazine?q=뉴진스
 
     Example 11)
-    user input: 바캉스 갈 때 입을 옷 추천해봐
-    URL: https://www.musinsa.com/search/musinsa/magazine?q=바캉스
+    user input:바캉스 갈 때 입을 옷 추천해봐
+    URL:https://www.musinsa.com/search/musinsa/magazine?q=바캉스
 
     Example 12)
-    user input: 일본 여행 갈 때 뭐입을지 정해줘
-    URL: https://www.musinsa.com/search/musinsa/magazine?q=일본+여행
+    user input:일본 여행 갈 때 뭐입을지 정해줘
+    URL:https://www.musinsa.com/search/musinsa/magazine?q=일본+여행
 
     Relavant Information: 
     {history}
